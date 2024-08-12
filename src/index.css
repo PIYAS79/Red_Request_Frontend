@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playwrite+PE:wght@100..400&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgRed: #ffe5df;
+    --colorRed: #d60408;
+    --specialFont: "EB Garamond", serif;
+}
+
+.wrapperBG {
+    background-color: var(--bgRed);
+}
+
+.bloodText {
+    color: var(--colorRed)
+}
+
+.specialFont {
+    font-family: var(--specialFont);
+}
+
+
+/* other utils class */
+.ant-menu-item-selected {
+    background-color: red !important;
+    color: white !important;
+}
+
+/* Screen size - responsive */
+@media only screen and (max-width: 350px) {
+    .ant-layout-header {
+        padding: 0px 10px !important;
+    }
+}
