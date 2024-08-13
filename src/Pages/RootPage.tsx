@@ -1,10 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import { Button, Layout, Menu } from 'antd';
-import Logo from '../Components/Logo';
+import Logo from '../Components/Others_Components/Logo';
 import { menuArr } from '../Global/MenuArray';
 const { Header, Content, Footer } = Layout;
-
-
 
 
 
@@ -16,16 +14,11 @@ const items = menuArr.map((one) => {
 });
 
 
-
-
-
-
-
 const RootPage = () => {
 
 
   return (
-    <Layout style={{ height: '100vh' }}>
+    <Layout style={{ height: '100%' }}>
       <Header
         style={{
           position: 'sticky',
@@ -64,12 +57,6 @@ const RootPage = () => {
         <Outlet />
       </Content>
 
-
-
-
-      <Footer style={{ textAlign: 'center' }}>
-        Red Request ©{new Date().getFullYear()} Created by PiyasMahamudeAlif
-      </Footer>
     </Layout>
   );
 }

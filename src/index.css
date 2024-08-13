@@ -19,12 +19,21 @@
 }
 
 .bloodText {
-    color: var(--colorRed)
+    color: var(--colorRed)!important;
 }
 
 .specialFont {
     font-family: var(--specialFont);
 }
+
+.bloodButton {
+    background: radial-gradient(circle, #d60408 0%, rgba(255,106,0,1) 100%) !important;
+}
+
+.bloodButton:hover {
+    background: radial-gradient(circle, rgba(255,106,0,1) 0%, #d60408 100%) !important;
+}
+
 
 
 /* other utils class */
