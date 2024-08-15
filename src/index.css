@@ -34,7 +34,10 @@
     background: radial-gradient(circle, rgba(255,106,0,1) 0%, #d60408 100%) !important;
 }
 
-
+.basicContainer{
+    width:60%;
+    margin:auto;
+}
 
 /* other utils class */
 .ant-menu-item-selected {
@@ -46,5 +49,10 @@
 @media only screen and (max-width: 350px) {
     .ant-layout-header {
         padding: 0px 10px !important;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .basicContainer {
+        width:90%;
     }
 }
