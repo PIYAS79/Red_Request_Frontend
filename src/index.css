@@ -45,6 +45,10 @@
     color: white !important;
 }
 
+.leftPadding{
+    padding-left: 3rem;
+}
+
 /* Screen size - responsive */
 @media only screen and (max-width: 350px) {
     .ant-layout-header {
@@ -54,5 +58,8 @@
 @media only screen and (max-width: 800px) {
     .basicContainer {
         width:90%;
+    }
+    .leftPadding{
+        padding-left: 0rem;
     }
 }
