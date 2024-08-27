@@ -3,13 +3,18 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Flex, Row, Col, Select } from 'antd';
 import { Link } from 'react-router-dom';
 
- 
-type SingupFieldType= {
-    f_name:string,
-    m_name:string,
-    l_name:string,
-    email:string,
-    password:string,
+
+type SingupFieldType = {
+    f_name: string,
+    m_name: string,
+    l_name: string,
+    email: string,
+    password: string,
+    blood_group: string,
+    gender: string,
+    role: string,
+    phone: string,
+    address: string
 
 }
 
@@ -34,34 +39,34 @@ const RegisterPage = () => {
                 >
                     <p className='bloodText' style={{ marginBottom: '.5rem', textAlign: 'center', fontSize: '1.3rem', fontFamily: 'specialFont', fontWeight: '600' }}>Register Here</p>
                     {/* first name field */}
-                    <Form.Item
+                    <Form.Item<SingupFieldType>
                         name="f_name"
                         rules={[{ required: true, message: 'Please input your First Name!' }]}
                     >
                         <Input placeholder="First Name" />
                     </Form.Item>
                     {/* middle name field */}
-                    <Form.Item
+                    <Form.Item<SingupFieldType>
                         name="m_name"
                     >
                         <Input placeholder="Middle Name" />
                     </Form.Item>
                     {/* last name field */}
-                    <Form.Item
+                    <Form.Item<SingupFieldType>
                         name="l_name"
                         rules={[{ required: true, message: 'Please input your Last Name!' }]}
                     >
                         <Input placeholder="Last Name" />
                     </Form.Item>
                     {/* email field */}
-                    <Form.Item
+                    <Form.Item<SingupFieldType>
                         name="email"
                         rules={[{ required: true, message: 'Please input your Email!' }]}
                     >
                         <Input prefix={<UserOutlined />} placeholder="Email" />
                     </Form.Item>
                     {/* password field */}
-                    <Form.Item
+                    <Form.Item<SingupFieldType>
                         name="password"
                         rules={[{ required: true, message: 'Please input your Password!' }]}
                     >
@@ -69,7 +74,7 @@ const RegisterPage = () => {
                     </Form.Item>
 
                     {/* blood group  */}
-                    <Form.Item label="Blood Group"
+                    <Form.Item<SingupFieldType> label="Blood Group"
                         name="blood_group"
                         rules={[{ required: true, message: 'Please input your Blood Group!' }]}
                     >
@@ -86,7 +91,7 @@ const RegisterPage = () => {
                         </Select>
                     </Form.Item>
                     {/* gender field */}
-                    <Form.Item label="Your Gender"
+                    <Form.Item<SingupFieldType> label="Your Gender"
                         name="gender"
                         rules={[{ required: true, message: 'Please input your Gender!' }]}
                     >
@@ -96,7 +101,7 @@ const RegisterPage = () => {
                         </Select>
                     </Form.Item>
                     {/* role field */}
-                    <Form.Item label="Select a role"
+                    <Form.Item<SingupFieldType> label="Select a role"
                         name="role"
                         rules={[{ required: true, message: 'Please input your Role!' }]}
                     >
@@ -107,14 +112,14 @@ const RegisterPage = () => {
                         </Select>
                     </Form.Item>
                     {/* Phone field */}
-                    <Form.Item
+                    <Form.Item<SingupFieldType>
                         name="phone"
                         rules={[{ required: true, message: 'Please input your Phone Number!' }]}
                     >
                         <Input placeholder="Phone Number" />
                     </Form.Item>
                     {/* Address field */}
-                    <Form.Item
+                    <Form.Item<SingupFieldType>
                         name="address"
                         rules={[{ required: true, message: 'Please input your Address!' }]}
                     >
