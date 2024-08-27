@@ -16,7 +16,7 @@ const Hero_Section = () => {
             </div>
         </Col>
         <Col xs={24} md={12} style={{display:'flex',justifyContent:'center'}}>
-            <img style={{width:'80%'}} src="https://i.ibb.co/vZfmVGQ/Pngtree-doctor-and-donation-of-the-6288026.png" alt="" />
+            <img style={{width:'80%'}} src="https://res.cloudinary.com/do7nin6oo/image/upload/v1724692639/Pngtree_doctor_and_donation_of_the_6288026_ip3kmf.png" alt="" />
         </Col>
     </Row>
   )

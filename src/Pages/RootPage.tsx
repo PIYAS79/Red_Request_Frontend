@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Button, Layout, Menu } from 'antd';
 import Logo from '../Components/Others_Components/Logo';
 import { menuArr } from '../Global/MenuArray';
+import BloodButton from '../Components/Others_Components/BloodButton';
 const { Header, Content, Footer } = Layout;
 
 
@@ -42,8 +43,7 @@ const RootPage = () => {
         />
 
         <div>
-          {/* <Button>LOGIN</Button> */}
-          <Button danger>LOGOUT</Button>
+          <BloodButton link='/login' text='Login' />
         </div>
 
 

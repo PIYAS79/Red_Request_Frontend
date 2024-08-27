@@ -6,7 +6,7 @@ const FindBlood_Section = () => {
         <div style={{ padding: '5rem 0rem' }}>
             <Row className="basicContainer">
                 <Col span={24} md={12} style={{ display: 'flex', justifyContent: 'center' }}>
-                    <img style={{ width: '70%',objectFit:'contain' }} src="https://i.ibb.co/nsyQcNM/Pngtree-blood-donation-5398289.png" alt="" />
+                    <img style={{ width: '70%',objectFit:'contain' }} src="https://res.cloudinary.com/do7nin6oo/image/upload/v1724692815/Pngtree_love_blood_donation_5395179_lsqijy.png" alt="" />
                 </Col>
                 <Col span={24} md={12} className="specialFont" style={{ display:'flex',flexDirection:'column',justifyContent:'center' }}>
                     <h2>Blood Request</h2>

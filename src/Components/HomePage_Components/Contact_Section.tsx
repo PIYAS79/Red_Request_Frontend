@@ -55,10 +55,9 @@ const Contact_Section = () => {
                         <TextArea />
                     </Form.Item>
 
-<div style={{textAlign:'center'}}>
-
-                    <Button className="bloodButton" danger size="large" type="primary" htmlType="submit">Submit Message</Button>
-</div>
+                    <div style={{ textAlign: 'center' }}>
+                        <Button className="bloodButton" danger size="large" type="primary" htmlType="submit">Submit Message</Button>
+                    </div>
 
                 </Form>
             </div>

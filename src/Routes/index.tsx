@@ -4,6 +4,8 @@ import HomePage from "../Pages/HomePage";
 import DonateBloodPage from "../Pages/DonateBloodPage";
 import DonorsPage from "../Pages/DonorsPage";
 import BloodBankPage from "../Pages/BloodBankPage";
+import LoginPage from "../Pages/LoginPage";
+import RegisterPage from "../Pages/RegisterPage";
 
 
 
@@ -14,7 +16,15 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <HomePage />
+                element: <HomePage />,
+            },
+            {
+                path: '/login',
+                element: <LoginPage />
+            },
+            {
+                path: '/signup',
+                element: <RegisterPage />
             },
             {
                 path: '/donate',

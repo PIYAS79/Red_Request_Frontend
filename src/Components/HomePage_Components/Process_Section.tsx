@@ -5,7 +5,7 @@ const Process_Section = () => {
     return (
         <div style={{ background: 'white', padding: '5rem 0rem',position:'relative' }}>
             <div style={{ position: 'absolute',bottom:'0', opacity: '.8' }}>
-                <img style={{ width: '300px' }} src="https://i.ibb.co/XYV6zQL/pngwing-com-1.png" alt="" />
+                <img style={{ width: '300px' }} src="https://res.cloudinary.com/do7nin6oo/image/upload/v1724692815/pngwing.com_1_bm8g1s.png" alt="" />
             </div>
             <Row className="basicContainer">
                 <Col span={24} md={12} className="specialFont" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -15,7 +15,7 @@ const Process_Section = () => {
                     <BloodButton link="/contact" text="View Our Bank" />
                 </Col>
                 <Col span={24} md={12} style={{ display: 'flex', justifyContent: 'center' }}>
-                    <img style={{ width: '70%', objectFit: 'contain' }} src="https://i.ibb.co/KmdYNmt/pngwing-com-2.png" alt="" />
+                    <img style={{ width: '70%', objectFit: 'contain' }} src="https://res.cloudinary.com/do7nin6oo/image/upload/v1724692943/pngwing.com_2_opzyer.png" alt="" />
                 </Col>
             </Row>
         </div>
