@@ -22,9 +22,14 @@ const customBaseQuery: BaseQueryFn<FetchArgs, BaseQueryApi, DefinitionType> = as
     let res = await baseQuery(args, api, extraOptions) as any;
     // if status code is 404
     if (res?.error?.status === 404) {
-        toast.error(res?.error?.data?.errorTitle, { position: 'top-center' })
+        toast.error(res?.error?.data?.Error_Title, { position: 'bottom-right' })
     }
-    // is there is any token realted issue 
+    // duplicate key error 
+    if(res?.error?.status == 409){
+        console.log("FIRE from BASE");
+        toast.error(res?.error?.data?.Error_Title, { position: 'bottom-right' })
+    }
+
     if (res?.error?.status === 401) {
         const result = await fetch('https://code-note-backend.vercel.app/api/v1/auth/refresh', {
             method: "GET",

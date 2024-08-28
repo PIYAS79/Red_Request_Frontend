@@ -1,7 +1,13 @@
 
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Flex, Row, Col, Select } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { My_Profile_Data_Type, Token_Decode_User_Type } from '../Global/User_Related_Types';
+import { toast } from 'sonner'
+import { useCreateUserMutation } from '../redux/apis/authApi';
+import { useAppDispatch } from '../redux/hook';
+import { jwtDecode } from "jwt-decode";
+import { setUser } from '../redux/features/auth.slice';
 
 
 type SingupFieldType = {
@@ -15,14 +21,52 @@ type SingupFieldType = {
     role: string,
     phone: string,
     address: string
-
 }
 
 
 const RegisterPage = () => {
 
-    const onFinish = (values: any) => {
-        console.log('Received values of form: ', values);
+    const [signUpFnc,] = useCreateUserMutation();
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch()
+
+    const onFinish = async (values: any) => {
+        try {
+            const toastId = toast.loading('Loading....', { position: 'top-center' });
+            const newUser: Partial<My_Profile_Data_Type> = {
+                name: {
+                    f_name: values.f_name,
+                    m_name: values.m_name,
+                    l_name: values.l_name
+                },
+                blood_group: values.blood_group,
+                email: values.email,
+                password: values.password,
+                contact: {
+                    phone: values.phone,
+                    address: values.address
+                },
+                status: "Active",
+                role: values.role,
+                gender: values.gender,
+
+            }
+            const data: any = await signUpFnc(newUser);
+            console.log(data);
+            if (data?.data?.result) {
+                toast.success('Successfully Registered !', { position: 'top-center', id: toastId });
+                const decodedData = jwtDecode(data?.data?.accessToken) as Token_Decode_User_Type;
+                dispatch(setUser({
+                    user: decodedData,
+                    token: data?.data?.accessToken,
+                    _id: data?.data?.result?._id,
+                    me: data?.data?.result
+                }));
+                navigate('/')
+            }
+        } catch (err: any) {
+            console.log(err.data);
+        }
     };
 
 

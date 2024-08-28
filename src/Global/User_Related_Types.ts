@@ -3,13 +3,13 @@ export type User_Name = {
     f_name: string
     m_name: string
     l_name: string
-    _id: string
+    _id?: string
 }
 
 export type Contact = {
     phone: string
     address: string
-    _id: string
+    _id?: string
 }
 
 
