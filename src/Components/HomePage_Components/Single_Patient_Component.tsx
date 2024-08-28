@@ -5,7 +5,6 @@ import { Opinion_Type } from '../../Global/PatientOpinionArray';
 
 const Single_Patient = ({ data }: { data: Opinion_Type }) => {
 
-    console.log(data);
 
     return (
         <div>

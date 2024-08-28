@@ -26,7 +26,6 @@ const customBaseQuery: BaseQueryFn<FetchArgs, BaseQueryApi, DefinitionType> = as
     }
     // duplicate key error 
     if(res?.error?.status == 409){
-        console.log("FIRE from BASE");
         toast.error(res?.error?.data?.Error_Title, { position: 'bottom-right' })
     }
 

@@ -3,6 +3,8 @@ import { Button, Layout, Menu } from 'antd';
 import Logo from '../Components/Others_Components/Logo';
 import { menuArr } from '../Global/MenuArray';
 import BloodButton from '../Components/Others_Components/BloodButton';
+import { useAppDispatch, useAppSelector } from '../redux/hook';
+import { removeUser } from '../redux/features/auth.slice';
 const { Header, Content, Footer } = Layout;
 
 
@@ -16,7 +18,12 @@ const items = menuArr.map((one) => {
 
 
 const RootPage = () => {
+  const dispatch = useAppDispatch();
+  const { me } = useAppSelector(state => state.auth)
 
+  const handleClickLogOut = () => {
+    dispatch(removeUser());
+  }
 
   return (
     <Layout style={{ height: '100%' }}>
@@ -43,7 +50,12 @@ const RootPage = () => {
         />
 
         <div>
-          <BloodButton link='/login' text='Login' />
+          {me ?
+            <Button onClick={handleClickLogOut} style={{ background: 'red', border: 'none', color: 'white' }}>Logout</Button>
+            :
+            <BloodButton link='/login' text='Login' />
+          }
+
         </div>
 
 

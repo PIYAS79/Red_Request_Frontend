@@ -52,7 +52,6 @@ const RegisterPage = () => {
 
             }
             const data: any = await signUpFnc(newUser);
-            console.log(data);
             if (data?.data?.result) {
                 toast.success('Successfully Registered !', { position: 'top-center', id: toastId });
                 const decodedData = jwtDecode(data?.data?.accessToken) as Token_Decode_User_Type;
