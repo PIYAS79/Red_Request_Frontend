@@ -5,16 +5,13 @@ import { menuArr } from '../Global/MenuArray';
 import BloodButton from '../Components/Others_Components/BloodButton';
 import { useAppDispatch, useAppSelector } from '../redux/hook';
 import { removeUser } from '../redux/features/auth.slice';
+import generateAnt_D_Routes from '../Routes/ant.routes';
+import baseRoutes from '../Routes/base.routes';
 const { Header, Content, Footer } = Layout;
 
 
 
-const items = menuArr.map((one) => {
-  return {
-    key: one.key,
-    label: one.value
-  }
-});
+const items = generateAnt_D_Routes(baseRoutes)
 
 
 const RootPage = () => {
@@ -35,7 +32,8 @@ const RootPage = () => {
           width: '100%',
           display: 'flex',
           alignItems: 'center',
-          backgroundColor: 'pink'
+          backgroundColor: 'pink',
+          padding:'.5rem'
         }}
       >
         <div className="demo-logo">

@@ -1,6 +1,6 @@
 export const menuArr = [
     {
-      key:"HomePage",
+      key:"home",
       value:'Home Page',
     },
     {
